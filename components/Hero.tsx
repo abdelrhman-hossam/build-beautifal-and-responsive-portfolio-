@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaTwitter, FaDribbble, FaCode, FaPaperPlane } from "react-icons/fa";
 
 export default function Hero() {
-    const letters = "Eng-Abdelrhman Hossam Abozahra".split("");
 
     return (
         <section
@@ -25,24 +24,14 @@ export default function Hero() {
                     className="flex-1 text-center lg:text-left"
                 >
                     {/* Animated Text */}
-                    <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight overflow-hidden flex flex-wrap justify-center lg:justify-start">
-                        {letters.map((char, index) => (
-                            <motion.span
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{
-                                    delay: index * 0.05,
-                                    type: "spring",
-                                    stiffness: 100,
-                                    damping: 10
-                                }}
-                                className="bg-gradient-to-r from-white via-neon to-white bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-text"
-                            >
-                                {char === " " ? "\u00A0" : char}
-                            </motion.span>
-                        ))}
-                    </h1>
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight bg-gradient-to-r from-white via-neon to-white bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-text flex flex-wrap justify-center lg:justify-start"
+                    >
+                        Eng-Abdelrhman Hossam Abozahra
+                    </motion.h1>
 
                     <motion.div
                         initial={{ opacity: 0 }}
