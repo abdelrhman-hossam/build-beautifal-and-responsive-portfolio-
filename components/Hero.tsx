@@ -24,14 +24,25 @@ export default function Hero() {
                     className="flex-1 text-center lg:text-left"
                 >
                     {/* Animated Text */}
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight bg-gradient-to-r from-white via-neon to-white bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-text flex flex-wrap justify-center lg:justify-start"
-                    >
-                        Eng-Abdelrhman Hossam Abozahra
-                    </motion.h1>
+                    {/* Animated Text */}
+                    <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight flex flex-wrap justify-center lg:justify-start gap-3">
+                        {"Eng-Abdelrhman Hossam Abozahra".split(" ").map((word, index) => (
+                            <motion.span
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{
+                                    delay: index * 0.1,
+                                    type: "spring",
+                                    stiffness: 100,
+                                    damping: 10
+                                }}
+                                className="bg-gradient-to-r from-white via-neon to-white bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-text"
+                            >
+                                {word}
+                            </motion.span>
+                        ))}
+                    </h1>
 
                     <motion.div
                         initial={{ opacity: 0 }}
