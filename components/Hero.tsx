@@ -27,18 +27,17 @@ export default function Hero() {
                     {/* Animated Text - Translation Safe & Eye-Catching */}
                     {/* Animated Text - Translation Optimized */}
                     {/* Animated Text - Translation Safe & Reliable (Solid Color) */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                    >
+                    <div className="fade-in">
                         <h1
+                            lang="en"
+                            dir="ltr"
                             className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-center lg:text-left text-white drop-shadow-[0_0_25px_rgba(42,252,133,0.6)]"
                             translate="yes"
                         >
                             Eng-Abdelrhman Hossam Abozahra
                         </h1>
-                    </motion.div>
+                        <span className="sr-only">Eng-Abdelrhman Hossam Abozahra</span>
+                    </div>
 
                     <motion.div
                         initial={{ opacity: 0 }}
