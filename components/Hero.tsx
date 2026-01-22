@@ -26,13 +26,14 @@ export default function Hero() {
                     {/* Animated Text */}
                     {/* Animated Text - Translation Safe & Eye-Catching */}
                     {/* Animated Text - Translation Optimized */}
+                    {/* Animated Text - Translation Safe & Reliable (Solid Color) */}
                     <motion.div
                         initial={{ opacity: 0, y: 20, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                         <h1
-                            className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-center lg:text-left bg-gradient-to-r from-white via-neon to-white bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-text drop-shadow-[0_0_15px_rgba(42,252,133,0.3)]"
+                            className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-center lg:text-left text-white drop-shadow-[0_0_25px_rgba(42,252,133,0.6)]"
                             translate="yes"
                         >
                             Eng-Abdelrhman Hossam Abozahra
