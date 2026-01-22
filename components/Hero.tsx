@@ -25,22 +25,26 @@ export default function Hero() {
                 >
                     {/* Animated Text */}
                     {/* Animated Text */}
-                    <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight flex flex-wrap justify-center lg:justify-start gap-3">
-                        {"Eng-Abdelrhman Hossam Abozahra".split(" ").map((word, index) => (
-                            <motion.span
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{
-                                    delay: index * 0.1,
-                                    type: "spring",
-                                    stiffness: 100,
-                                    damping: 10
-                                }}
-                                className="bg-gradient-to-r from-white via-neon to-white bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-text"
-                            >
-                                {word}
-                            </motion.span>
+                    <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight flex flex-wrap justify-center lg:justify-start gap-x-3 gap-y-1">
+                        {"Eng-Abdelrhman Hossam Abozahra".split(" ").map((word, wordIndex) => (
+                            <span key={wordIndex} className="whitespace-nowrap inline-block">
+                                {word.split("").map((char, charIndex) => (
+                                    <motion.span
+                                        key={charIndex}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{
+                                            delay: (wordIndex * 0.2) + (charIndex * 0.05),
+                                            type: "spring",
+                                            stiffness: 100,
+                                            damping: 10
+                                        }}
+                                        className="inline-block bg-gradient-to-r from-white via-neon to-white bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-text"
+                                    >
+                                        {char}
+                                    </motion.span>
+                                ))}
+                            </span>
                         ))}
                     </h1>
 
