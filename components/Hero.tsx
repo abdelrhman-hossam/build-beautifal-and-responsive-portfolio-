@@ -25,26 +25,30 @@ export default function Hero() {
                 >
                     {/* Animated Text */}
                     {/* Animated Text */}
-                    <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight flex flex-wrap justify-center lg:justify-start gap-x-3 gap-y-1">
-                        {"Eng-Abdelrhman Hossam Abozahra".split(" ").map((word, wordIndex) => (
-                            <span key={wordIndex} className="whitespace-nowrap inline-block">
-                                {word.split("").map((char, charIndex) => (
-                                    <motion.span
-                                        key={charIndex}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{
-                                            delay: (wordIndex * 0.2) + (charIndex * 0.05),
-                                            type: "spring",
-                                            stiffness: 100,
-                                            damping: 10
-                                        }}
-                                        className="inline-block bg-gradient-to-r from-white via-neon to-white bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-text"
-                                    >
-                                        {char}
-                                    </motion.span>
-                                ))}
-                            </span>
+                    <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-center lg:text-left">
+                        {"Eng-Abdelrhman Hossam Abozahra".split(" ").map((word, wordIndex, array) => (
+                            <React.Fragment key={wordIndex}>
+                                <span className="inline-block whitespace-nowrap">
+                                    {word.split("").map((char, charIndex) => (
+                                        <motion.span
+                                            key={charIndex}
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{
+                                                delay: (wordIndex * 0.2) + (charIndex * 0.05),
+                                                type: "spring",
+                                                stiffness: 100,
+                                                damping: 10
+                                            }}
+                                            className="inline-block bg-gradient-to-r from-white via-neon to-white bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-text"
+                                        >
+                                            {char}
+                                        </motion.span>
+                                    ))}
+                                </span>
+                                {/* Add a space after every word except the last one */}
+                                {wordIndex < array.length - 1 && <span>&nbsp;</span>}
+                            </React.Fragment>
                         ))}
                     </h1>
 
