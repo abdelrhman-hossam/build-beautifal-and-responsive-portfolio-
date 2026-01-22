@@ -24,33 +24,15 @@ export default function Hero() {
                     className="flex-1 text-center lg:text-left"
                 >
                     {/* Animated Text */}
-                    {/* Animated Text */}
-                    <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-center lg:text-left">
-                        {"Eng-Abdelrhman Hossam Abozahra".split(" ").map((word, wordIndex, array) => (
-                            <React.Fragment key={wordIndex}>
-                                <span className="inline-block whitespace-nowrap">
-                                    {word.split("").map((char, charIndex) => (
-                                        <motion.span
-                                            key={charIndex}
-                                            initial={{ opacity: 0, y: 20 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{
-                                                delay: (wordIndex * 0.2) + (charIndex * 0.05),
-                                                type: "spring",
-                                                stiffness: 100,
-                                                damping: 10
-                                            }}
-                                            className="inline-block bg-gradient-to-r from-white via-neon to-white bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-text"
-                                        >
-                                            {char}
-                                        </motion.span>
-                                    ))}
-                                </span>
-                                {/* Add a space after every word except the last one */}
-                                {wordIndex < array.length - 1 && <span>&nbsp;</span>}
-                            </React.Fragment>
-                        ))}
-                    </h1>
+                    {/* Animated Text - Translation Safe & Eye-Catching */}
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-center lg:text-left bg-gradient-to-r from-white via-neon to-white bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-text drop-shadow-[0_0_15px_rgba(42,252,133,0.3)]"
+                    >
+                        Eng-Abdelrhman Hossam Abozahra
+                    </motion.h1>
 
                     <motion.div
                         initial={{ opacity: 0 }}
